@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0, 0.5;
+  --background-start-rgb: 24, 24, 27, 0.5;
+  --background-end-rgb: 39, 39, 42, 0.5;
+}
+
+body {
+  background-color: black;
+}
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+    @apply pt-4;
+    @apply leading-3;
+    /* @apply text-zinc-100; */
+    @apply uppercase;
+  }
+
+  h2 {
+    @apply pt-4;
+    @apply font-semibold;
+    @apply leading-7;
+    /* @apply text-zinc-200; */
+    @apply text-xl;
+  }
+
+  h3 {
+    @apply leading-7;
+    @apply text-base;
+    /* @apply text-zinc-500; */
+  }
+
+  p {
+    @apply leading-7;
+    @apply text-base;
+    /* @apply text-zinc-100; */
+  }
+
+  ::selection {
+    background: #333333;
+  }
+}
