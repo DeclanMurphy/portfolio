@@ -1,11 +1,7 @@
-import { getUrl } from '@/lib/getUrl';
-import { Suspense } from 'react';
-
 import { AdditionalInfo } from '@/components/common/AdditionalInfo';
-import { ICPSkeleton } from '@/components/common/ImageColumnPanel';
 import Panel from '@/components/common/Panel';
 import BioList from '@/content/home/BioList';
-import ProjectList from '@/content/home/ProjectList';
+import { PastProjects } from '@/content/home/PastProjects';
 
 export default function Home() {
   return (
@@ -27,23 +23,18 @@ export default function Home() {
         </Panel>
       </section>
       <section aria-label="Past projects section">
-        <div className="w-full text-center my-8">
-          <h1 className="text-4xl md:text-6xl mb-2 select-none">Past Projects</h1>
-          <AdditionalInfo
-            text="This content is streamed via"
-            href="https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming"
-            hrefText="Next.js Suspense"
-          />
-        </div>
-        <div className="grid gap-9 mb-10">
-          <Suspense fallback={<ICPSkeleton times={2} />}>
-            {/* @ts-expect-error Async Server Component */}
-            <ProjectList
-              data={fetch(`${getUrl()}/api/projects?q=${Date.now()}`, {
-                cache: 'no-store'
-              })}
+        <div className="mb-10">
+          <div className="w-full text-center my-8">
+            <h1 className="text-4xl md:text-6xl">Past Projects</h1>
+            <AdditionalInfo
+              text="This content is streamed via"
+              href="https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming"
+              hrefText="Next.js Suspense"
             />
-          </Suspense>
+          </div>
+          <div className="grid gap-6">
+            <PastProjects />
+          </div>
         </div>
       </section>
     </div>
