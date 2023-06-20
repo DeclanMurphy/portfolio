@@ -5,15 +5,14 @@ import { toast } from 'react-toastify';
 import Button from '@/components/common/Button';
 import { HighlightText } from '@/components/common/HighlightText';
 import List from '@/components/common/List';
-import ListItem from '@/components/common/ListItem';
-import ListItemSkeleton from '@/components/loading/ListItemSkeleton';
+import ListItem, { ListItemSkeleton } from '@/components/common/ListItem';
 import { AdditionalInfo } from '@/components/common/AdditionalInfo';
 
 import { getUrl } from '@/lib/getUrl';
 import Bio from '@/app/api/bios/bio.d';
-import { ScrollDownIndicator } from '../../components/common/ScrollDownIndicator';
+import { ScrollDownIndicator } from '@/components/common/ScrollDownIndicator';
 
-const BioSection: React.FC = ({}) => {
+const BioList: React.FC = () => {
   const [bios, setBios] = useState<Bio[] | []>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const btnContainerRef = useRef<HTMLDivElement | null>(null);
@@ -79,4 +78,4 @@ const BioSection: React.FC = ({}) => {
   );
 };
 
-export default BioSection;
+export default BioList;

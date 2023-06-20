@@ -1,5 +1,5 @@
 export default interface Bio {
-  id?: number;
+  id?: string;
   icon: IconKey;
   title: string;
   paragraph: string;
