@@ -56,6 +56,7 @@ export const projectList = [
     title: 'Your.Rentals',
     subtitle: 'Vacation Rentals SaaS',
     image: '/yr-overview.png',
-    alt: 'Your Rentals'
+    alt: 'Your Rentals',
+    href: 'https://your.rentals'
   }
 ];

@@ -13,6 +13,7 @@ export async function ProjectList({ data }: { data: Promise<Response> }) {
           subtitle={project.subtitle}
           image={project.image}
           alt={project.alt}
+          href={project.href}
         />
       ))}
     </>

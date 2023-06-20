@@ -10,23 +10,24 @@ type Props = {
   alt: string;
 };
 
+const outerClass =
+  'bg-zinc-950 shadow-xl ring-1 ring-zinc-700 sm:rounded-lg relative overflow-hidden bg-no-repeat bg-cover bg-center flex flex-col';
+
 const ImageColumnPanel: React.FC<Props> = ({ children, className, image, alt, ...rest }) => {
-  const finalClassNames = classNames(
-    'bg-zinc-950 shadow-xl ring-1 ring-zinc-800 hover:ring-zinc-700 sm:rounded-lg relative overflow-hidden bg-no-repeat bg-cover bg-center',
-    className
-  );
   return (
-    <div {...rest} className={finalClassNames}>
-      <Image
-        className="w-full h-auto"
-        sizes="100vw"
-        src={image}
-        alt={alt}
-        width={0}
-        height={0}
-        priority={true}
-      />
-      <div className="sm:px-6 px-4 pb-6">{children}</div>
+    <div {...rest} className={classNames(outerClass, className)}>
+      <div className="w-full aspect-video bg-zinc-800 rounded">
+        <Image
+          className="w-full select-none"
+          sizes="100vw"
+          src={image}
+          alt={alt}
+          width={0}
+          height={0}
+          priority={true}
+        />
+      </div>
+      <div className="sm:px-6 px-4 h-24">{children}</div>
     </div>
   );
 };
@@ -42,18 +43,13 @@ export const ICPSkeleton: React.FC<ICPSkeletonProps> = ({ times }) => {
     .fill(0)
     .map((_, i) => {
       return (
-        <div
-          key={i}
-          className={
-            'bg-zinc-950 shadow-xl ring-1 ring-zinc-800 hover:ring-zinc-700 sm:rounded-lg relative overflow-hidden bg-no-repeat bg-cover bg-center animate-pulse'
-          }
-        >
-          <div className="space-y-3 m-3">
-            <div className="flex items-center justify-center h-48 lg:h-96 mb-4 bg-zinc-700 rounded">
-              <BsFillImageFill className="w-12 h-12 text-zinc-600" />
-            </div>
-            <div className="h-3 w-6/12 rounded-lg bg-zinc-700" />
-            <div className="h-3 w-4/12 rounded-lg bg-zinc-700" />
+        <div key={i} className={classNames(outerClass, 'animate-pulse')}>
+          <div className="flex items-center justify-center w-full aspect-video bg-zinc-800 rounded">
+            <BsFillImageFill className="w-12 h-12 text-zinc-600" />
+          </div>
+          <div className="px-4 pt-3 h-24">
+            <div className="h-6 a w-9/12 md:w-6/12 m-2 rounded-lg bg-zinc-800" />
+            <div className="h-5 a w-6/12 md:w-3/12 m-2 rounded-lg bg-zinc-800" />
           </div>
         </div>
       );

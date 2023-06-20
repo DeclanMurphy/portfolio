@@ -4,4 +4,5 @@ export default interface Project {
   subtitle: string;
   image: string;
   alt: string;
+  href?: string;
 }

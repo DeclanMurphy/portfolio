@@ -3,10 +3,11 @@ import { projectList } from '@/constant';
 import { pause } from '@/lib/pause';
 
 export async function GET(request: NextRequest) {
-  // For development only to simulate a complex request
-  await pause(2500);
+  const { searchParams } = new URL(request.url);
+  // For development only - simulates a high latency request
+  await pause(3000);
   return NextResponse.json(
-    { projects: projectList },
+    { projects: projectList, searchParams },
     {
       status: 200,
       headers: {

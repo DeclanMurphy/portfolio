@@ -8,7 +8,7 @@ import ToastProvider from '@/providers/ToastProvider';
 const inter = Maven_Pro({ weight: ['400'], subsets: ['latin'] });
 export const metadata = {
   title: 'Declan Murphy | Portfolio',
-  description: 'Fullstack Developer | Business Analyst'
+  description: 'Fullstack Developer'
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
