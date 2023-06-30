@@ -4,7 +4,7 @@ export const bioList = [
     icon: 'BiCodeAlt',
     title: 'Development',
     paragraph:
-      'I have experience coding in a lot of web languages and frameworks. Some of my favourites include React.jS, Node.js & Next.js. I have experience using CSS frameworks such as Tailwind, Sass and MaterialUI. Throughout my years of development I have deployed applications using Amazon Web Services, Google Cloud Platform and Heroku.'
+      'I have experience coding in a lot of web languages and frameworks. Some of my favourites include React.js, Node.js & Next.js. I have experience using CSS libraries such as Tailwind, Sass and MaterialUI. Throughout my years of development I have deployed applications using Amazon Web Services, Google Cloud Platform and Heroku.'
   },
   {
     id: '2',
@@ -58,5 +58,13 @@ export const projectList = [
     image: '/yr-overview.png',
     alt: 'Your Rentals',
     href: 'https://your.rentals'
+  },
+  {
+    id: '3',
+    title: 'LeetCode',
+    subtitle: 'Coding Challenges',
+    image: '/leetcode.png',
+    alt: 'LeetCode Coding Challenges',
+    href: 'https://leetcode.com/declanmurphy92'
   }
 ];

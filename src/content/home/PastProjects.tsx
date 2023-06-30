@@ -6,7 +6,7 @@ import { getUrl } from '@/lib/getUrl';
 
 export function PastProjects() {
   return (
-    <Suspense fallback={<ICPSkeleton times={2} />}>
+    <Suspense fallback={<ICPSkeleton times={3} />}>
       {/* @ts-expect-error Async Server Component */}
       <ProjectList
         data={fetch(`${getUrl()}/api/projects`, {

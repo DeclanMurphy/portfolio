@@ -22,17 +22,17 @@ export default function Home() {
           </div>
         </Panel>
       </section>
-      <section aria-label="Past projects section">
+      <section aria-label="Projects section">
         <div className="mb-10">
           <div className="w-full text-center my-8">
-            <h1 className="text-4xl md:text-6xl">Past Projects</h1>
+            <h2 className="text-4xl md:text-6xl uppercase">Projects & Challenges</h2>
             <AdditionalInfo
               text="This content is streamed via"
               href="https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming"
               hrefText="Next.js Suspense"
             />
           </div>
-          <div className="grid gap-6">
+          <div className="grid gap-6 mb-2">
             <PastProjects />
           </div>
         </div>

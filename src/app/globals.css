@@ -15,12 +15,12 @@ body {
 @layer base {
   h1 {
     @apply text-2xl;
+    @apply leading-7;
     @apply pt-4;
   }
 
   h2 {
     @apply pt-4;
-    @apply font-semibold;
     @apply leading-7;
     @apply text-xl;
   }
