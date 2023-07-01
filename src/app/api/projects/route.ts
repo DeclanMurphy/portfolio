@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic';
 export async function GET() {
   try {
     // For development only - simulates a high latency request
-    await pause(3000);
+    await pause(2000);
     return NextResponse.json(
       { projects: projectList },
       {
